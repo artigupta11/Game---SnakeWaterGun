@@ -1,0 +1,56 @@
+# Lets fun by playing this game
+import random
+import emojis
+emojified = emojis.encode(":trophy:")
+option= ["Snake","Water","Gun"]
+i=10
+my_win = 0
+com_win=0
+print("SNAKE,WATER,GUN --------GAME")
+while(i):
+        computer_choice=random.choice(option)
+        print("count down start", i)
+        print("enter your choice:-----",option)
+
+        my_choice =input("\n")
+        i=i-1
+        if my_choice==computer_choice:
+            print("both choice same")
+            continue
+        elif my_choice=="Snake" and computer_choice=="Water":
+            print("you win this chance\n")
+            my_win=my_win+1
+            continue
+        elif my_choice=="Snake" and computer_choice=="Gun":
+            print("computer win this chance\n")
+            com_win=com_win+1
+            continue
+
+        elif my_choice=="Water" and computer_choice=="Gun":
+            print("you win this chance\n")
+            my_win=my_win+1
+            continue
+
+        elif my_choice=="Water" and computer_choice=="Snake":
+            print("computer win this chance\n")
+            com_win=com_win+1
+            continue
+        elif my_choice=="Gun" and computer_choice=="Snake":
+            print("you win this chance\n")
+            my_win=my_win+1
+            continue
+        elif my_choice=="Gun" and computer_choice=="Water":
+            print("computer win this chance\n")
+            com_win=com_win+1
+            continue
+        else:
+            print("your entered wrong input")
+            i=i+1
+
+if com_win > my_win:
+         print("Game Over! Computer Win")
+else:
+         print("Game Over!",emojified," You Win")
+
+if com_win == my_win:
+        print("game tie")
